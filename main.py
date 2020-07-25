@@ -5,11 +5,16 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from secret import pwd
+from secret import CN
+from secret import Expiry
+from secret import CVV
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.chrome.options import Options
 
 
-PATH = "/Users/imaadmalik/Desktop/Development/Python_Selenium/chromedriver"
+PATH = "/Users/imaadmalik/Desktop/Development/DeliverooBot/chromedriver"
 driver = webdriver.Chrome(PATH)
+
 
 driver.get("https://deliveroo.co.uk")
 time.sleep(2) # time to allow the site to load to avoid an exception error
@@ -63,6 +68,12 @@ Buy.click()
 time.sleep(2)
 Checkout = driver.find_element_by_xpath("/html/body/div[3]/div/div[2]/div[3]/div/div/div/div/div[2]/div/div[1]/span/a/span/div/span[2]")
 Checkout.click()
+time.sleep(2)
+Street = driver.find_element_by_id("address1")
+Street.send_keys("58 Eastbury Road")
+Note = driver.find_element_by_id("delivery_note")
+Note.send_keys("Message when you are here and I will come down and collect")
+#Submit = driver.find_element_by_xpath("//*[@id='payment-app-container']/div[2]/div/div/div[1]/form/div[6]/div/span/button/span")
+#Submit.click()
+time.sleep(3600)
 
-
-time.sleep(1000)

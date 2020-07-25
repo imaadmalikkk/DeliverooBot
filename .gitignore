@@ -1,2 +1,2 @@
-#secret.py contains the password. Set as pwd = 'password'
+#secret.py contains all details, stored in variables as strings and the imported into main.py
 secret.py
